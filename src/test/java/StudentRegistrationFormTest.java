@@ -35,7 +35,7 @@ public class StudentRegistrationFormTest extends BaseTest {
         $("#userNumber").setValue(phoneNumber);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").click();
-        $x("//option[contains(text(),'" + year + "')]").scrollTo().click();
+        $x("//option[contains(text(),'" + year + "')]").click();
         $(".react-datepicker__month-select").click();
         $x("//option[contains(text(),'" + mounth + "')]").click();
         $$(".react-datepicker__day").find(exactText("16")).click();
