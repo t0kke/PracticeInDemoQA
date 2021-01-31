@@ -1,4 +1,3 @@
-import com.codeborne.selenide.Condition;
 import config.BaseTest;
 import org.junit.jupiter.api.Test;
 
@@ -50,14 +49,5 @@ public class StudentRegistrationFormTest extends BaseTest {
 
         $$x("//tbody//td[2]").shouldHave(exactTexts(firstName + " " + lastName, email, gender, phoneNumber,
                 day + " " + mounth + "," + year , subjects, hobbies, picName, currentAddress, state + " " + city));
-
-
-
-
-
-
-
-
-
     }
 }
