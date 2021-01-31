@@ -25,7 +25,6 @@ public class StudentRegistrationFormTest extends BaseTest {
                 state = "NCR",
                 city = "Noida";
 
-
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
