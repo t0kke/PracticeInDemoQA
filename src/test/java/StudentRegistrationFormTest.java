@@ -10,8 +10,7 @@ import static com.codeborne.selenide.CollectionCondition.exactTexts;
 public class StudentRegistrationFormTest extends BaseTest {
     @Test
     void checkingTheFormFilling () {
-        String
-                firstName = "German",
+        String  firstName = "German",
                 lastName = "Kataev",
                 email = "test@test.tt",
                 phoneNumber = "9998887766",
