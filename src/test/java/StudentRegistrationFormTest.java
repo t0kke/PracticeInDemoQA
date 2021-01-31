@@ -40,9 +40,6 @@ public class StudentRegistrationFormTest extends BaseTest {
         $(".react-datepicker__month-select").click();
         $x("//option[contains(text(),'" + mounth + "')]").click();
         $$(".react-datepicker__day").find(exactText("16")).click();
-        //$$(".react-datepicker__month-select").find(exactText(mounth)).click();
-        //$$(".react-datepicker__day").find(exactText(day)).click();
-        // executeJavaScript(String.format("$('[id=dateOfBirthInput]').val('%s')", date));
         $("#subjectsInput").setValue(subjects).pressEnter();
         $x("//label[text()='" + hobbies + "']").click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/files/pug.jpeg"));
