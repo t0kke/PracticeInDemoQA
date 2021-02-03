@@ -5,7 +5,7 @@ import static pages.RegistrationPage.*;
 
 public class RegistrationNewUserTest  {
     @Test
-    void registration() {
+    void registrationNewUser() {
         enterToRegistrationPage()
                 .setValueInFieldWithPlaceholder("German", "First Name")
                 .setValueInFieldWithPlaceholder("Kataev", "Last Name")
