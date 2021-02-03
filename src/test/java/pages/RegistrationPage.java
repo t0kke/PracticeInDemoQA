@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class RegistrationPage extends BasePage {
     public static RegistrationPage openToRegistrationPage() {
         open("https://demoqa.com/automation-practice-form");
-
         return page(RegistrationPage.class);
     }
 
@@ -20,7 +19,6 @@ public class RegistrationPage extends BasePage {
         SelenideElement fieldWithPlaceholder = $x("//input[@placeholder='" + namePlaceholder + "']");
 
         fieldWithPlaceholder.setValue(value);
-
         return this;
     }
 
@@ -28,7 +26,6 @@ public class RegistrationPage extends BasePage {
         SelenideElement genderRadiobutton = $x("//label[text()='" + genderName + "']");
 
         genderRadiobutton.click();
-
         return this;
     }
 
@@ -46,7 +43,6 @@ public class RegistrationPage extends BasePage {
         monthInput.click();
         choiceOfMonthWithList.click();
         dayPicker.find(exactText(day)).click();
-
         return this;
     }
 
@@ -54,7 +50,6 @@ public class RegistrationPage extends BasePage {
         SelenideElement subjectInput = $("#subjectsInput");
 
         subjectInput.val(subject).pressEnter();
-
         return this;
     }
 
@@ -62,7 +57,6 @@ public class RegistrationPage extends BasePage {
         SelenideElement checkboxHobby = $x("//label[text()='" + nameHobby + "']");
 
         checkboxHobby.click();
-
         return this;
     }
 
@@ -70,7 +64,6 @@ public class RegistrationPage extends BasePage {
         SelenideElement inputFile = $("#uploadPicture");
 
         inputFile.uploadFile(new File(filename));
-
         return this;
     }
 
@@ -78,7 +71,6 @@ public class RegistrationPage extends BasePage {
         SelenideElement addressField = $("#currentAddress");
 
         addressField.setValue(address);
-
         return this;
     }
 
@@ -88,7 +80,6 @@ public class RegistrationPage extends BasePage {
         
         dropdownInput.click();
         itemDropdownList.click();
-
         return this;
     }
 
@@ -96,7 +87,6 @@ public class RegistrationPage extends BasePage {
         SelenideElement sunmitButton = $("#submit");
 
         sunmitButton.click();
-
         return this;
     }
 
@@ -107,7 +97,6 @@ public class RegistrationPage extends BasePage {
 
         registrationData.shouldHave(exactTexts(firstName + " " + lastName, email, gender, phoneNumber,
                 day + " " + month + "," + year , subject, hobbie, picName, currentAddress, state + " " + city));
-
         return this;
     }
 }

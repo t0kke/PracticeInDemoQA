@@ -2,7 +2,6 @@ import org.junit.jupiter.api.Test;
 
 import static pages.RegistrationPage.openToRegistrationPage;
 
-
 public class RegistrationNewUserTest  {
     @Test
     void registrationNewUser() {
@@ -23,8 +22,6 @@ public class RegistrationNewUserTest  {
                 .CheckRegistrationData("German", "Kataev", "test@test.tt", "Male",
                         "9998887711","16", "July", "1993", "Arts", "Reading",
                         "pug.jpeg","Dovatora Ul., bld. 16, appt. 55", "NCR", "Noida");
-
     }
-
-    }
+}
 
