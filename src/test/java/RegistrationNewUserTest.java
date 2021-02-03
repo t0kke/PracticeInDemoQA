@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Test;
 
-import static pages.RegistrationPage.openToRegistrationPage;
+import static pages.RegistrationPage.openUrl;
 
 public class RegistrationNewUserTest  {
     @Test
     void registrationNewUser() {
-        openToRegistrationPage()
+        openUrl("https://demoqa.com/automation-practice-form")
                 .setValueInFieldWithPlaceholder("German", "First Name")
                 .setValueInFieldWithPlaceholder("Kataev", "Last Name")
                 .setValueInFieldWithPlaceholder("test@test.tt", "name@example.com")

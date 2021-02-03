@@ -9,13 +9,13 @@ import static com.codeborne.selenide.CollectionCondition.exactTexts;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationPage extends BasePage {
-    public static RegistrationPage openToRegistrationPage() {
-        open("https://demoqa.com/automation-practice-form");
+public class RegistrationPage {
+    public static RegistrationPage openUrl(String url) {
+        open(url);
         return page(RegistrationPage.class);
     }
 
-    public RegistrationPage setValueInFieldWithPlaceholder(String value, String namePlaceholder){
+    public RegistrationPage setValueInFieldWithPlaceholder(String value, String namePlaceholder) {
         SelenideElement fieldWithPlaceholder = $x("//input[@placeholder='" + namePlaceholder + "']");
 
         fieldWithPlaceholder.setValue(value);
