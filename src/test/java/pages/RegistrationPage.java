@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage extends BasePage {
-    public static RegistrationPage enterToRegistrationPage(){
+    public static RegistrationPage openToRegistrationPage() {
         open("https://demoqa.com/automation-practice-form");
 
         return page(RegistrationPage.class);

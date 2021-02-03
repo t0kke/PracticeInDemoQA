@@ -1,12 +1,12 @@
 import org.junit.jupiter.api.Test;
 
-import static pages.RegistrationPage.*;
+import static pages.RegistrationPage.openToRegistrationPage;
 
 
 public class RegistrationNewUserTest  {
     @Test
     void registrationNewUser() {
-        enterToRegistrationPage()
+        openToRegistrationPage()
                 .setValueInFieldWithPlaceholder("German", "First Name")
                 .setValueInFieldWithPlaceholder("Kataev", "Last Name")
                 .setValueInFieldWithPlaceholder("test@test.tt", "name@example.com")
@@ -23,9 +23,6 @@ public class RegistrationNewUserTest  {
                 .CheckRegistrationData("German", "Kataev", "test@test.tt", "Male",
                         "9998887711","16", "July", "1993", "Arts", "Reading",
                         "pug.jpeg","Dovatora Ul., bld. 16, appt. 55", "NCR", "Noida");
-
-
-
 
     }
 
