@@ -4,12 +4,11 @@ import org.junit.jupiter.api.Test;
 import java.util.Locale;
 
 import static pages.RegistrationPage.openUrl;
-import static utils.GenerationFakeData.faker;
 
 public class RegistrationNewUserTest {
     Faker faker = new Faker(new Locale("ru-RU"));
-    String firstName = faker().name().firstName();
-    String lastName = faker().name().lastName();
+    String firstName = faker.name().firstName();
+    String lastName = faker.name().lastName();
     String email = faker.internet().emailAddress("test");
     String phone = faker.phoneNumber().subscriberNumber(10);
     String fullAddress = faker.address().fullAddress();
