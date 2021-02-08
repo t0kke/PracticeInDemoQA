@@ -7,11 +7,11 @@ import static pages.RegistrationPage.openUrl;
 
 public class RegistrationNewUserTest {
     Faker faker = new Faker(new Locale("ru-RU"));
-    String firstName = faker.name().firstName();
-    String lastName = faker.name().lastName();
-    String email = faker.internet().emailAddress("test");
-    String phone = faker.phoneNumber().subscriberNumber(10);
-    String fullAddress = faker.address().fullAddress();
+    String firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            email = faker.internet().emailAddress("test"),
+            phone = faker.phoneNumber().subscriberNumber(10),
+            fullAddress = faker.address().fullAddress();
 
     @Test
     void registrationNewUser() {
