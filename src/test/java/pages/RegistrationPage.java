@@ -4,6 +4,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.CollectionCondition.exactTexts;
 import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
@@ -18,7 +19,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage clickByRadiobuttonWithName(String genderName) {
-        $x("//label[text()='" + genderName + "']").click();
+        $(byText(genderName)).click();
         return this;
     }
 
@@ -61,7 +62,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage CheckRegistrationData(String firstName, String lastName, String email, String gender, String phoneNumber,
+    public RegistrationPage checkRegistrationData(String firstName, String lastName, String email, String gender, String phoneNumber,
                                                   String day, String month, String year, String subject, String hobbie,
                                                   String picName, String currentAddress, String state, String city) {
         $$x("//tbody//td[2]").shouldHave(exactTexts(firstName + " " + lastName, email, gender, phoneNumber,

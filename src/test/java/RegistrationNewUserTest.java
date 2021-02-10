@@ -29,7 +29,7 @@ public class RegistrationNewUserTest {
                 .choiceFromDropdownListWithName("Select State", "NCR")
                 .choiceFromDropdownListWithName("Select City", "Noida")
                 .clickBySubmitButton()
-                .CheckRegistrationData(firstName, lastName, email, "Male",
+                .checkRegistrationData(firstName, lastName, email, "Male",
                         phone, "16", "July", "1993", "Arts", "Reading",
                         "pug.jpeg", fullAddress, "NCR", "Noida");
     }
