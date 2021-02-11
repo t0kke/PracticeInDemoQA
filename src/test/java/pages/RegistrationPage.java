@@ -14,7 +14,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setValueInFieldWithPlaceholder(String value, String namePlaceholder) {
-        $x("//input[@placeholder='" + namePlaceholder + "']").setValue(value);
+        $("[placeholder='" + namePlaceholder + "']").setValue(value);
         return this;
     }
 
@@ -37,7 +37,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage choiceOfHobbyWithName(String nameHobby) {
-        $x("//label[text()='" + nameHobby + "']").click();
+        $(byText(nameHobby)).click();
         return this;
     }
 
@@ -51,9 +51,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage choiceFromDropdownListWithName(String HeadingDropdownList, String ItemName) {
-        $x("//div[text()='" + HeadingDropdownList + "']").scrollTo().click();
-        $x("//div[text()='" + ItemName + "']").click();
+    public RegistrationPage choiceFromDropdownListWithName(String headingDropdownList, String itemName) {
+        $(byText(headingDropdownList)).scrollTo().click();
+        $(byText(itemName)).click();
         return this;
     }
 
