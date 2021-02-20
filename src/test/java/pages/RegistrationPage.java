@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     @Step("Открываем страницу регистрации ${url}")
-    public static RegistrationPage openUrl(String url) {
+    public static RegistrationPage openPage(String url) {
         open(url);
         return page(RegistrationPage.class);
     }

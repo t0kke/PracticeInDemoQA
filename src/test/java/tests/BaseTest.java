@@ -16,6 +16,7 @@ public class BaseTest {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.startMaximized = true;
+        Configuration.baseUrl = "https://demoqa.com";
 
         if (System.getProperty("remote_driver") != null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
