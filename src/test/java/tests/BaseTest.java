@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentsHelperToAllure.*;
 
@@ -32,5 +33,6 @@ public class BaseTest {
         attachAsText("Browser console logs", getConsoleLogs());
         if (System.getProperty("video_storage") != null)
             attachVideo();
+        closeWebDriver();
     }
 }
