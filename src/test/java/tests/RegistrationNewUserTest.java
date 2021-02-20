@@ -2,6 +2,7 @@ package tests;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
@@ -33,6 +34,17 @@ public class RegistrationNewUserTest extends BaseTest {
                 .enterAddressinField(fullAddress)
                 .choiceFromDropdownListWithName("Select State", "NCR")
                 .choiceFromDropdownListWithName("Select City", "Noida")
+                .clickBySubmitButton()
+                .checkRegistrationData(firstName, lastName, email, "Male",
+                        phone, "16", "July", "1993", "Arts", "Reading",
+                        "pug.jpeg", fullAddress, "NCR", "Noida");
+    }
+
+    @Test
+    @Tag("negative")
+    @DisplayName("Нажимаем кнопку отправки без заполнения данных")
+    void clickSubmitWithoutFillingInFields() {
+        openUrl("https://demoqa.com/automation-practice-form")
                 .clickBySubmitButton()
                 .checkRegistrationData(firstName, lastName, email, "Male",
                         phone, "16", "July", "1993", "Arts", "Reading",
