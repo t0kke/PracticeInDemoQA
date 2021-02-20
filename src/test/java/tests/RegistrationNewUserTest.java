@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
@@ -15,7 +16,9 @@ public class RegistrationNewUserTest extends BaseTest {
             phone = faker.phoneNumber().subscriberNumber(10),
             fullAddress = faker.address().fullAddress();
 
+
     @Test
+    @DisplayName("Регистрация нового пользователя")
     void registrationNewUser() {
         openUrl("https://demoqa.com/automation-practice-form")
                 .setValueInFieldWithPlaceholder(firstName, "First Name")
