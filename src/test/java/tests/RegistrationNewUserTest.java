@@ -7,7 +7,7 @@ import java.util.Locale;
 
 import static pages.RegistrationPage.openUrl;
 
-public class RegistrationNewUserTest {
+public class RegistrationNewUserTest extends BaseTest {
     Faker faker = new Faker(new Locale("ru-RU"));
     String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
