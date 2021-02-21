@@ -47,9 +47,7 @@ public class RegistrationNewUserTest extends BaseTest {
     void clickSubmitWithoutFillingInFields() {
         openPage(FORM)
                 .clickBySubmitButton()
-                .checkRegistrationData(firstName, lastName, email, "Male",
-                        phone, "16", "July", "1993", "Arts", "Reading",
-                        "pug.jpeg", fullAddress, "NCR", "Noida");
+                .checkBorderField();
     }
 }
 
