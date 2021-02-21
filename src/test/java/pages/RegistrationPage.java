@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 import java.io.File;
 
 import static com.codeborne.selenide.CollectionCondition.exactTexts;
+import static com.codeborne.selenide.Condition.cssValue;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -37,13 +38,13 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Выбираем предметы")
+    @Step("Выбираем предметы ${subject}")
     public RegistrationPage setSubjectWithName(String subject) {
         $("#subjectsInput").setValue(subject).pressEnter();
         return this;
     }
 
-    @Step("Выбираем хобби")
+    @Step("Выбираем хобби ${nameHobby}")
     public RegistrationPage choiceOfHobbyWithName(String nameHobby) {
         $(byText(nameHobby)).click();
         return this;
@@ -80,6 +81,14 @@ public class RegistrationPage {
                                                   String picName, String currentAddress, String state, String city) {
         $$x("//tbody//td[2]").shouldHave(exactTexts(firstName + " " + lastName, email, gender, phoneNumber,
                 day + " " + month + "," + year, subject, hobbie, picName, currentAddress, state + " " + city));
+        return this;
+    }
+
+    @Step("Проверяем индикацию незаполненных полей")
+    public RegistrationPage checkBorderField() {
+        $("#firstName").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
+        $("#lastName").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
+        $("#userNumber").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         return this;
     }
 }
