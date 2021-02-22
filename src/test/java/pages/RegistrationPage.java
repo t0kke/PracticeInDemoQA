@@ -11,13 +11,13 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
-    @Step("Открываем страницу регистрации ${url}")
+    @Step("Открываем страницу регистрации {url}")
     public static RegistrationPage openPage(String url) {
         open(url);
         return page(RegistrationPage.class);
     }
 
-    @Step("Заполняем поле с именем ${namePlaceholder}")
+    @Step("Заполняем поле с именем {namePlaceholder}")
     public RegistrationPage setValueInFieldWithPlaceholder(String value, String namePlaceholder) {
         $("[placeholder='" + namePlaceholder + "']").setValue(value);
         return this;
@@ -38,13 +38,13 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Выбираем предметы ${subject}")
+    @Step("Выбираем предметы {subject}")
     public RegistrationPage setSubjectWithName(String subject) {
         $("#subjectsInput").setValue(subject).pressEnter();
         return this;
     }
 
-    @Step("Выбираем хобби ${nameHobby}")
+    @Step("Выбираем хобби {nameHobby}")
     public RegistrationPage choiceOfHobbyWithName(String nameHobby) {
         $(byText(nameHobby)).click();
         return this;
