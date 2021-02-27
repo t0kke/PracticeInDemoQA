@@ -86,7 +86,7 @@ public class RegistrationPage {
 
     @Step("Проверяем индикацию незаполненных полей")
     public RegistrationPage checkBorderField() {
-        $("#firstName").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
+        $("#firstName").shouldHave(cssValue("border-color", "rgb(220, 53, 19)"));
         $("#lastName").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         $("#userNumber").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         return this;
