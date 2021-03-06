@@ -12,7 +12,8 @@ repositories {
 def allureVersion = "2.13.8",
         selenideVersion = "5.18.0",
         junitVersion = "5.7.0",
-        javafaker = "1.0.2"
+        javafakerVersion = "1.0.2",
+        ownerVersion = "1.0.12"
 
 allure {
     version = "${allureVersion}"
@@ -26,9 +27,10 @@ dependencies {
     testImplementation (
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "com.github.javafaker:javafaker:$javafaker",
+            "com.github.javafaker:javafaker:$javafakerVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
-            "org.junit.jupiter:junit-jupiter-params:$junitVersion")
+            "org.junit.jupiter:junit-jupiter-params:$junitVersion",
+            "org.aeonbits.owner:owner:$ownerVersion")
 
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
