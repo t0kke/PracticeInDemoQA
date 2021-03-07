@@ -1,7 +1,9 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import config.EnvironmentConfig;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -14,16 +16,18 @@ public class BaseTest {
     @BeforeAll
     static void setup() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-        Configuration.browser = System.getProperty("browser", "chrome");
+        final EnvironmentConfig config = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
+        Configuration.browser = config.browser();
+        Configuration.browserVersion = config.browserVersion();
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
 
-        if (System.getProperty("remote_driver") != null) {
+        if (config.webDriverUrl() != null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
-            Configuration.remote = System.getProperty("remote_driver");
+            Configuration.remote = config.webDriverUrl();
         }
     }
 

@@ -5,13 +5,13 @@ import org.aeonbits.owner.Config;
 @Config.Sources("classpath:${env}.properties")
 public interface EnvironmentConfig extends Config {
 
-    @Key("webDriverUrl")
+    @Key("remote.url")
     String webDriverUrl();
 
     @Key("browser")
     String browser();
 
-    @Key("browserVersion")
+    @Key("browser.version")
     String browserVersion();
 
 }
