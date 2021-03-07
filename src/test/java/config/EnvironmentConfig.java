@@ -14,4 +14,7 @@ public interface EnvironmentConfig extends Config {
     @Key("browser.version")
     String browserVersion();
 
+    @Key("video.storage")
+    String videoStorage();
+
 }

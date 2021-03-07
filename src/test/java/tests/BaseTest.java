@@ -9,14 +9,15 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.confirm;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentsHelperToAllure.*;
 
 public class BaseTest {
+    static final EnvironmentConfig config = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
     @BeforeAll
     static void setup() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-        final EnvironmentConfig config = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
         Configuration.browser = config.browser();
         Configuration.browserVersion = config.browserVersion();
         Configuration.startMaximized = true;
@@ -36,7 +37,7 @@ public class BaseTest {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
-        if (System.getProperty("video_storage") != null)
+        if (config.videoStorage()!= null)
             attachVideo();
         closeWebDriver();
     }
